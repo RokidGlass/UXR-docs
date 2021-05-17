@@ -1,47 +1,54 @@
 
 # UXR SDK
 
-# 简介
-* UXR SDK是一套适用于Rokid Yidao 主机的XR SDK，可帮助开发者创作眼镜上的XR应用。UXR基于Google Cardboard，包含如下特性
-    * 头部追踪
-    * 双目立体渲染
-    * 语音识别
+# Intro
+* The UXR SDK is based on Google Cardboard plugin, it helps to create your own XR experiences for Rokid glass. It supports
+essential XR features, such as:
 
-* 借助这些功能，可以开发全新的XR应用，也可以为已有应用添加XR效果。
+    * Motion tracking
+    * Stereoscopic rendering
+    * Voice Recognition
 
-* UXR Unity SDK通过如下Unity Sample 场景展示了以上功能的使用:
-    * 头部追踪场景  `展示3 dof头部追踪和glass双目立体渲染的功能` 
-    * 语音识别场景  `展示语音识别功能（中英文离线语音指令）`
+* With these capabilities you can build entirely new XR experiences, or enhance
+existing apps with XR capabilities.
+
+* This Unity SDK sample demonstrates the usage of the features mentioned above by some scenes:
+     * HeadTracking scene
+   shows usage of 3 dof head tracking, and stereoscopic rendering for glass
+     * VoiceRecog scene
+   shows usage of rokid voice recognition(offline voice instruction for Chinese and English)
+
+# Preparation
+  * Hardware
+    *  Rokid dock(supports Rokid Yidao Dock)
+    *  Rokid glass(supports Rokid Vision2 glass)
+  * Software
+    *  Unity3D (2019.3.15f1 ~ 2020.1）
+    *  JDK, Android SDK and NDK compatiable with Unity3D
+
+# Get started
+
+To get started with the UXR SDK Sample:
+
+* Please read and follow the steps below
+ [Quickstart\_UXR\_Unity](./Quickstart_UXR_Unity_EN.md) 
 
 
-# 环境准备
-  * 硬件环境
-    *  Rokid dock(支持Rokid Yidao 主机)
-    *  Rokid glass(支持Rokid Vision2眼镜)
-  * 软件环境
-    *  Unity3D (支持2019.3.15f1 ~ 2020.1版本）
-    *  Unity3D打包Android应用依赖的JDK, Android SDK, NDK
+# API reference
 
-# 快速上手
-如何开始使用UXR Unity SDK:
-
-* 请阅读并按照以下链接所述步骤设置
- [Quickstart\_UXR\_Unity\_CN.md](./Quickstart_UXR_Unity_CN.md) 
-
-# API 说明
-
-详见 [UXR\_API\_CN.md](./UXR_API_CN.md) 
+Please see the [UXR\_API](./UXR_API_EN.md)
 
 
-# 最佳实践
-Unity SDK及Sample工程下载地址：``https://ota-g.rokidcdn.com/toB/Rokid_Glass/SDK/UXR_SDK/Unity/RokidUXR_Unity_1.5.0.zip``
+# SDK Download
+Unity SDK Sample downlaid link：``https://ota-g.rokidcdn.com/toB/Rokid_Glass/SDK/UXR_SDK/Unity/RokidUXR_Unity_1.5.0.zip``
 
 
 # ChangeLog
 
-| 版本记录                 | 修订日期     | 撰稿人/修订人         | 变更记录及说明 |
+| Version                 | Date       | Author               | Notes |
 | --------                | ---------- | -------------------- | ------------- |
-| UXR SDK Unity v1.5.0    | 2021.04.16 | wenbo.wang@rokid.com | 首次创建文档   |
+| UXR SDK Unity v1.5.0    | 2021.04.16 | wenbo.wang@rokid.com | Initial commit   |
+
 
 
 
