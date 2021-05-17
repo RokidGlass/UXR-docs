@@ -12,7 +12,7 @@ You can use the SDK on Rokid AR Glass platform. The glass can display 3D scenes 
 ## 1. Set up your development environment
  Software requirements:  
 
-  * Unity3D (2019.3.15f1 ~ 2020.1)
+  * Unity3D (2019.3.15f1 ~ 2020.1)  
 Make sure to include Android  Build Support during installation.
 
 
@@ -22,9 +22,9 @@ Follow these steps to import the Unity SDK and create a new project.
 * 2.1 Open Unity and create a new 3D project.
 * 2.2 In Unity, go to Window > Package Manager.
 * 2.3 Click + and select Add package from disk.
-* 2.4 Download the UXR SDK plugin and decompress it, then select the package.json file under SDK dir.
+* 2.4 Download the UXR SDK plugin and decompress it, then select the package.json file under SDK dir.  
 The package should be added to the installed packages.
-* 2.5 Navigate to the Google Cardboard XR Plugin for Unity package. In the Samples section, choose Import into Project.
+* 2.5 Navigate to the Google Cardboard XR Plugin for Unity package. In the Samples section, choose Import into Project.  
 The sample assets should be loaded into Assets/Samples/Google Cardboard/<version>/Hello Cardboard/Assets.
 * 2.6 Navigate to Assets/Samples/Google Cardboard/<version>/Hello Cardboard/Assets/Scenes, select Add Open Scenes, and choose HelloCardboard to open the sample scene.
 
@@ -69,17 +69,17 @@ If Target API Level is set to API Level 29 or Automatic (highest installed) (res
 Select 'Custom Main Manifest' in the Build section.  
 Add the following attribute to the application tag of Assets/Plugins/Android/AndroidManifest.xml:
 
-  <application android:requestLegacyExternalStorage="true" ... >
-    ...
-  </application>
+  `<application android:requestLegacyExternalStorage="true" ... >`  
+    ...  
+  `</application>`
 
-* 3.5 XR Plug-in Management Settings
+* 3.5 XR Plug-in Management Settings  
 Navigate to Project Settings > XR Plug-in Management.
 
-Select Cardboard XR Plugin under Plug-in Providers.
+  Select Cardboard XR Plugin under Plug-in Providers.
 
-* 3.6 Build your project
+* 3.6 Build your project  
 Navigate to File > Build Settings.
 
-Select Build, or choose a device and select Build and Run.
+  Select Build, or choose a device and select Build and Run.
 

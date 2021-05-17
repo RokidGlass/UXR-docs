@@ -13,9 +13,9 @@ essential XR features, such as:
 existing apps with XR capabilities.
 
 * This Unity SDK sample demonstrates the usage of the features mentioned above by some scenes:
-     * HeadTracking scene
+     * HeadTracking scene  
    shows usage of 3 dof head tracking, and stereoscopic rendering for glass
-     * VoiceRecog scene
+     * VoiceRecog scene  
    shows usage of rokid voice recognition(offline voice instruction for Chinese and English)
 
 # Preparation
@@ -30,7 +30,7 @@ existing apps with XR capabilities.
 
 To get started with the UXR SDK Sample:
 
-* Please read and follow the steps below
+* Please read and follow the steps below  
  [Quickstart\_UXR\_Unity](./Quickstart_UXR_Unity_EN.md) 
 
 
@@ -40,7 +40,8 @@ Please see the [UXR\_API](./UXR_API_EN.md)
 
 
 # SDK Download
-Unity SDK Sample downlaid link：``https://ota-g.rokidcdn.com/toB/Rokid_Glass/SDK/UXR_SDK/Unity/RokidUXR_Unity_1.5.0.zip``
+Unity SDK Sample downlaid link：  
+``https://ota-g.rokidcdn.com/toB/Rokid_Glass/SDK/UXR_SDK/Unity/RokidUXR_Unity_1.5.0.zip``
 
 
 # ChangeLog

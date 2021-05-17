@@ -26,11 +26,11 @@
 如何开始使用UXR Unity SDK:
 
 * 请阅读并按照以下链接所述步骤设置
- [Quickstart\_UXR\_Unity\_CN.md](./Quickstart_UXR_Unity_CN.md) 
+ [Quickstart\_UXR\_Unity\_CN](./Quickstart_UXR_Unity_CN.md) 
 
 # API 说明
 
-详见 [UXR\_API\_CN.md](./UXR_API_CN.md) 
+详见 [UXR\_API\_CN](./UXR_API_CN.md) 
 
 
 # 最佳实践
