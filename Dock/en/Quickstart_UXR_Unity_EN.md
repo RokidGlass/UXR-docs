@@ -1,4 +1,4 @@
-# Quickstart for Rokid UXR SDK for Unity
+# Quickstart for Rokid UXR Dock SDK for Unity
 
 This guide shows you how to use the UXR Unity SDK to create your own XR experiences.
 

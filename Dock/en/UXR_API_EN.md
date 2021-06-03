@@ -1,81 +1,80 @@
-# Rokid UXR SDK for Unity
+# Rokid UXR Dock SDK for Unity
 ====================================
 Copyright 2020 Rokid
 
 
-## API 参考
+## API reference
 
-### 头动跟踪与双目渲染API
- [Google Cardboard XR Unity API 参考](https://developers.google.com/cardboard/reference/unity) 
+### Motion tracking & Stereoscopic rendering API
+[Google Cardboard XR Plugin for Unity API Reference](https://developers.google.com/cardboard/reference/unity) 
 
 ### UXRManager
- UXRManager prefab 管理眼镜事件及状态的通知，也可以通过其执行一些控制命令.
-* 类:
+The UXRManager prefab manages some glass event and status notification, and you can also do some controls via it.
 
-    UXRController
+* Class:
+
+UXRController
 
 * API:
 
   * public void MessageUSBDeviceATTACHED(string glassName)  
- 当USB Glass插入Dock后，UXR接收到系统发出的ACTION_USB_DEVICE_ATTACHED广播, 该函数会被执行
+ when USB glass plugin, ACTION_USB_DEVICE_ATTACHED event broadcast received, this function will be called
 
   * public  void MessageUSBDeviceDETACHED(string glassName)  
- 当USB Glass从Dock拔出后, UXR接收到系统发出的ACTION_USB_DEVICE_DETACHED 广播, 该函数会被执行
+ when USB glass plugout, ACTION_USB_DEVICE_DETACHED event broadcast received, this function will be called
 
   * public static int getUSBEventStatus()  
- 获取当前USB Glass的插拔广播状态  
- 返回值: -1: 未知; 1: ATTACHED; 0: DETACHED
+ get USB glass plugin/plugout event status
+ return value: -1: unknown; 1: ATTACHED; 0: DETACHED
 
 ### Voice Recognition
- VoiceRecognizer prefab 管理 rokid 语音指令，可通过其添加、删除特定的语音指令.  
-目前支持中文、英文语音指令.  
-中文指令在系统语言为中文时有效；  
-英文指令在系统语言为英文时有效；
+The VoiceRecognizer prefab manages rokid voice instruction function. You can add/remove voice instructions by it.  
+At present, it supports Chinese, English language.  
+Chinese instruct only available when system language is Chinese, and English instruct only available when system language is English.
 
-* 类:
+* class:
 
     VoiceRecognizer
 
 * API:
 
   * public  void unityremoveInstructZH(string name)  
- 删除一条中文语音指令  
+ remove a Chinese instruct  
  eg, unityremoveInstructZH("下一个")
 
   * public void unityclearUserInstruct()  
- 删除app内设置的所有指令
+ clear all the instructs set by user
 
   * public void unityaddInstrucEntityZH(string name, string pinyin, string gameobj,string unitycallbackfunc,string tmp)  
- 增加一条中文语音指令  
+ add a Chinese instruct，use default config  
  eg, unityaddInstrucEntityZH("下一个", pinyin, "VoiceRecognizer","unitydoNext","xyg")
 
 
   * public void unityaddInstrucEntityZH(string name, string pinyin, bool showTips, bool ignoreHelp,bool ignoreToast, string gameobj,string unitycallbackfunc,string tmp)  
- 增加一条中文语音指令  
+ add a Chinese instruct, with specfic confic  
  eg, unityaddInstrucEntityZH("下一个", pinyin, true,true,true, "VoiceRecognizer","unitydoNext","xyg")
 
 
   * public void unityaddInstrucListZH(string prefix, string subfix, string helpContent, int startNo, int endNo, string gameobj, string unitycallbackfunc)  
- 增加一组中文语音指令  
+ add a Chinese instructList  
  eg, unityaddInstrucListZH("打开第", "个", “打开第x个”,1,5, "VoiceRecognizer","unityInstructListFun")
 
 
   * public void unityaddInstrucEntity(int languageEnum, string name, string pinyin, string gameobj,string unitycallbackfunc,string tmp)  
- 增加一条语音指令  
- 参数: 
-  languageEnum: 0 - 中文, 1 - 英文  
+ add an instruct，use default config
+ para: 
+  languageEnum: 0 - zh, 1 - en  
  eg, unityaddInstrucEntity(0, "下一个", pinyin, "VoiceRecognizer","unitydoNext","xyg")
 
   * public void unityaddInstrucEntity(int languageEnum, string name, string pinyin, bool showTips, bool ignoreHelp,bool ignoreToast, string gameobj,string unitycallbackfunc,string tmp)  
- 增加一条语音指令  
+ add an instruct，use defspecficault config  
  para:   
   languageEnum: 0 - zh, 1 - en  
  eg, unityaddInstrucEntity(0, "下一个", pinyin, true,true,true, "VoiceRecognizer","unitydoNext","xyg")
 
   * public void unityaddInstrucList(int languageEnum,string prefix, string subfix, string helpContent, int startNo, int endNo, string gameobj, string unitycallbackfunc)  
- 增加一组语音指令  
+ add an instructList  
  eg, unityaddInstrucList(0,"打开第", "个", “打开第x个”,1,5, "VoiceRecognizer","unityInstructListFun")
-
 
 
 

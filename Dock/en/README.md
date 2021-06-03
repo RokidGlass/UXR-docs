@@ -1,5 +1,5 @@
 
-# UXR SDK
+# UXR Dock SDK
 
 # Intro
 * The UXR SDK is based on Google Cardboard plugin, it helps to create your own XR experiences for Rokid glass. It supports
@@ -21,7 +21,7 @@ existing apps with XR capabilities.
 # Preparation
   * Hardware
     *  Rokid dock(supports Rokid Yidao Dock)
-    *  Rokid glass(supports Rokid Vision2 glass)
+    *  Rokid glass(supports Rokid Air glass)
   * Software
     *  Unity3D (2019.3.15f1 ~ 2020.1）
     *  JDK, Android SDK and NDK compatiable with Unity3D
@@ -40,15 +40,16 @@ Please see the [UXR\_API](./UXR_API_EN.md)
 
 
 # SDK Download
-Unity SDK Sample downlaid link：  
-``https://ota-g.rokidcdn.com/toB/Rokid_Glass/SDK/UXR_SDK/Unity/RokidUXR_Unity_1.5.0.zip``
+Unity SDK Sample download link:  
+``https://ota-g.rokidcdn.com/toB/Rokid_Glass/SDK/UXR_SDK/Unity/forDock/RokidUXR_Unity_ForDock_1.5.2.zip``
 
 
 # ChangeLog
 
-| Version                 | Date       | Author               | Notes |
-| --------                | ---------- | -------------------- | ------------- |
-| UXR SDK Unity v1.5.0    | 2021.04.16 | wenbo.wang@rokid.com | Initial commit   |
+| Version                      | Date       | Author               | Notes                       |
+| --------                     | ---------- | -------------------- | --------------------------- |
+| UXR Dock SDK Unity v1.5.0    | 2021.04.16 | wenbo.wang@rokid.com | Initial commit              |
+| UXR Dock SDK Unity v1.5.2    | 2021.05.31 | wenbo.wang@rokid.com | add support for Air glass   |
 
 
 
