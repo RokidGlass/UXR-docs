@@ -1,5 +1,5 @@
 # Rokid UXR Dock SDK for Unity
-====================================
+====================================  
 Copyright 2020 Rokid
 
 
@@ -13,7 +13,7 @@ The UXRManager prefab manages some glass event and status notification, and you 
 
 * Class:
 
-UXRController
+    UXRController
 
 * API:
 
@@ -28,53 +28,109 @@ UXRController
  return value: -1: unknown; 1: ATTACHED; 0: DETACHED
 
 ### Voice Recognition
-The VoiceRecognizer prefab manages rokid voice instruction function. You can add/remove voice instructions by it.  
+Manage rokid voice instruction function. You can add/remove voice instructions by it.  
 At present, it supports Chinese, English language.  
 Chinese instruct only available when system language is Chinese, and English instruct only available when system language is English.
 
 * class:
 
-    VoiceRecognizer
+    VoiceCommandLogic
 
 * API:
 
-  * public  void unityremoveInstructZH(string name)  
- remove a Chinese instruct  
- eg, unityremoveInstructZH("下一个")
+Delete instructions
 
-  * public void unityclearUserInstruct()  
- clear all the instructs set by user
-
-  * public void unityaddInstrucEntityZH(string name, string pinyin, string gameobj,string unitycallbackfunc,string tmp)  
- add a Chinese instruct，use default config  
- eg, unityaddInstrucEntityZH("下一个", pinyin, "VoiceRecognizer","unitydoNext","xyg")
-
-
-  * public void unityaddInstrucEntityZH(string name, string pinyin, bool showTips, bool ignoreHelp,bool ignoreToast, string gameobj,string unitycallbackfunc,string tmp)  
- add a Chinese instruct, with specfic confic  
- eg, unityaddInstrucEntityZH("下一个", pinyin, true,true,true, "VoiceRecognizer","unitydoNext","xyg")
-
-
-  * public void unityaddInstrucListZH(string prefix, string subfix, string helpContent, int startNo, int endNo, string gameobj, string unitycallbackfunc)  
- add a Chinese instructList  
- eg, unityaddInstrucListZH("打开第", "个", “打开第x个”,1,5, "VoiceRecognizer","unityInstructListFun")
-
-
-  * public void unityaddInstrucEntity(int languageEnum, string name, string pinyin, string gameobj,string unitycallbackfunc,string tmp)  
- add an instruct，use default config
- para: 
+  * public  void RemoveInstructZH(string name)  
+  Delete a Chinese voice command  
+  eg, RemoveInstructZH("下一个")
+ 
+   * public  void RemoveInstruct(int languageEnum,string name)  
+  Delete a voice command  
+  Parameters: 
   languageEnum: 0 - zh, 1 - en  
- eg, unityaddInstrucEntity(0, "下一个", pinyin, "VoiceRecognizer","unitydoNext","xyg")
+  eg, RemoveInstruct(1,"next")
 
-  * public void unityaddInstrucEntity(int languageEnum, string name, string pinyin, bool showTips, bool ignoreHelp,bool ignoreToast, string gameobj,string unitycallbackfunc,string tmp)  
- add an instruct，use defspecficault config  
- para:   
+  * public void ClearUserInstruct()  
+  Delete all instructions set in the app
+
+
+Single instruction
+
+  * public void AddInstrucEntityZH(string name, string pinyin, string gameobj,string unitycallbackfunc,string tmp)  
+  Add a Chinese voice command   
+  eg, AddInstrucEntityZH("下一个", pinyin, "VoiceRecognizer","unitydoNext","xyg")
+ 
+  * public void AddInstrucEntityZH(string name, string pinyin, bool showTips, bool ignoreHelp, bool ignoreToast, string gameobj, string unitycallbackfunc, string tmp)  
+  Add a Chinese voice command    
+  eg, AddInstrucEntityZH("下一个", pinyin,ture,true,true,"VoiceRecognizer","unitydoNext","xyg")
+
+
+  * public void AddInstrucEntity(int languageEnum,string name, string gameobj,string unitycallbackfunc,string tmp)  
+  Add a voice command    
+  Parameters: 
   languageEnum: 0 - zh, 1 - en  
- eg, unityaddInstrucEntity(0, "下一个", pinyin, true,true,true, "VoiceRecognizer","unitydoNext","xyg")
+  eg, AddInstrucEntity(1,"next", "VoiceRecognizer","unitydoNext","xyg")
 
-  * public void unityaddInstrucList(int languageEnum,string prefix, string subfix, string helpContent, int startNo, int endNo, string gameobj, string unitycallbackfunc)  
- add an instructList  
- eg, unityaddInstrucList(0,"打开第", "个", “打开第x个”,1,5, "VoiceRecognizer","unityInstructListFun")
+  * public void AddInstrucEntity(int languageEnum, string name, bool showTips, bool ignoreHelp, bool ignoreToast, string gameobj, string unitycallbackfunc, string tmp)  
+  Add a voice command  
+  Parameters: 
+  languageEnum: 0 - zh, 1 - en    
+  eg, AddInstrucEntity(1,"next",true,true,true, "VoiceRecognizer","unitydoNext","xyg")
 
+
+A set of instructions
+
+  * public void AddInstrucListZH(string prefix, string subfix, string helpContent, int startNo, int endNo, string gameobj, string InstructListCallback)  
+  Add a set of Chinese voice commands  
+  eg, AddInstrucListZH("打开第", "个", “打开第x个”,1,5, "VoiceRecognizer","InstructListCallback")
+
+  * public void AddInstrucList(int languageEnum, string prefix, string subfix, string helpContent, int startNo, int endNo, string gameobj, string InstructListCallback)  
+  Add a set of voice commands
+  Parameters:  
+  languageEnum: 0 - zh, 1 - en   
+  eg, AddInstrucList(1,"打开第", "个", “打开第x个”,1,5, "VoiceRecognizer","InstructListCallback")
+
+  * public void InstructListCallback(string ekey)  
+  Callback registered by multiple instructions  
+  eg, public void InstructListCallback(string ekey)  
+      {  
+		string[] keyArray = ekey.Split('-');  
+        int index = int.Parse(keyArray[1]);  
+        Debug.Log("-UXR- unityInstructListFun: " + keyArray[0] + ", index:" + index);  
+      }  
+
+### Gesture Recognition
+UXRGes prefab manages notifications of recognized gesture status, display the position of the recognized hand and the type of recognized gesture  
+[supported gesture](https://github.com/RokidGlass/UXR-docs/tree/dev_dock_153/Dock/mm) 
+
+* class:
+    UXRGesController
+    
+* API:
+ * private void GesInit()  
+ Initialize gesture service，com.rokid.uxrplugin.activity.UXRUnityActivity has been processed, Unity does not need to call 
+ 
+  * private void GesConnect()  
+ Connect gesture service，com.rokid.uxrplugin.activity.UXRUnityActivity has been processed, Unity does not need to call
+ 
+  * private void GesDisconnect()  
+ Disconnect gesture service，com.rokid.uxrplugin.activity.UXRUnityActivity has been processed, Unity does not need to call
+ 
+  * private void GesStart()
+ Start gesture service
+ 
+  * private void GesStop()
+ Stop gesture service
+ 
+ 
+ * class:
+     RKGestureEvent
+     
+* API:  
+	int GesType//Gesture type  
+	float normPosX//Screen normalized coordinate X axis  
+	float normPosY//Screen normalized coordinate Y axis  
+	int screenPosX//Reserved parameter, screen pixel coordinate X axis  
+	int screenPosY//Reserved parameter, screen pixel coordinate Y axis
 
 
