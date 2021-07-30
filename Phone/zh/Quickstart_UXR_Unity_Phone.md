@@ -77,5 +77,5 @@ Build部分选择 'Custom Main Manifest'.
 * 3.6 **编译应用**  
 打开 File > Build Settings.
 
-  选择 Build, 或 指定设备并选择 Build and Run.
+  选择 Build, 生成app后安装到手机, 再通过Rokid Air App打开它.
 

@@ -2,7 +2,7 @@
 ## 一、UXR 动态权限申请
 ### 1、声明所需权限
 
-`AndroidManifest.xml` 下声明所需权限
+`AndroidManifest.xml` 中声明所需权限，例如
 ```xml
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
@@ -10,7 +10,7 @@
 
 ### 2、权限申请
 
- * 创建对应权限数组
+ * 创建对应权限的数组，例如
 ```CS
     string[] permissions = new string[] {
         "android.permission.CAMERA",
@@ -57,49 +57,4 @@ UsbDeviceHelper.release();
       中文指令在系统语言为中文时有效；  
       英文指令在系统语言为英文时有效；
 
-## 四、UXR 手势服务
 
-### 1、初始化
-
-初始化 USB Camera：
-```CS
-UsbDeviceHelper.initUSBCamera();
-```
-初始化手势服务，设置手势结果返回的回调，参数为接收消息的游戏物体和方法
-```CS
-RKGestureHelper.init("RKGesure", "gestureCallback");
-```
-
-
-### 2、处理 Camera 数据
-
-在 Unity 的 Update 中，处理 Camera 数据：
-```CS
-    void Update()
-    {
-        ...
-        RKGestureHelper.handleFrame();
-    }
-```
-
-### 3、获取手势数据
-
-在对象 `RKGesure` 的 `gestureCallback` 方法下接收手势数据：
-```CS
-    public void gestureCallback(string strGestureJson)
-    {
-        GestureBean bean = JsonUtility.FromJson<GestureBean>(strGestureJson);
-        Debug.Log("RKGesture::gesture x1 = " + bean.x1 + "bean gesture type = " + bean.gesture_type);
-    }
-```
-
-### 4、释放
-结束时释放手势服务，释放 USB 设备
-```CS
-    private void OnDestroy()
-    {
-        ...
-        RKGestureHelper.release();
-        UsbDeviceHelper.release();
-    }
-```

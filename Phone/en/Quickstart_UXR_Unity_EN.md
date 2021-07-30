@@ -62,7 +62,7 @@ Add the following lines to the dependencies section of Assets/Plugins/Android/ma
   implementation 'com.android.support:appcompat-v7:28.0.0'  
   implementation 'com.android.support:support-v4:28.0.0'  
   implementation 'com.google.android.gms:play-services-vision:15.0.2'  
-  implementation 'com.google.protobuf:protobuf-lite:3.0.0'  
+  implementation 'com.google.protobuf:protobuf-javalite:3.8.0'  
 
 If Target API Level is set to API Level 29 or Automatic (highest installed) (resulting in API Level 29), the following steps are also required:
 
@@ -81,5 +81,5 @@ Navigate to Project Settings > XR Plug-in Management.
 * 3.6 Build your project  
 Navigate to File > Build Settings.
 
-  Select Build, or choose a device and select Build and Run.
+  Select Build, then install the app on the Android device, and start it by Rokid Air App.
 
