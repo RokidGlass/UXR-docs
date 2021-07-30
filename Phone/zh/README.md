@@ -24,7 +24,7 @@
 -------|------------------------------|---------------------
 硬件要求|Rokid Air + 适配的 Android 手机 |适配的 Android 手机：黑鲨手机3S SHARK KLE-A0、黑鲨手机4 SHARK PRS-A0
 软件要求|Unity3D开发工具                |支持Unity 2019.3.15f1 ~ 2020.1版本，请搭配兼容的 JDK, Android SDK, NDK 进行开发
-软件要求|Rokid Air App v1.0.6          |先下载Air App并安装到手机上，然后通过Air app打开UXR应用
+软件要求|Rokid Air App v1.0.7          |先下载Air App并安装到手机上，然后通过Air app打开UXR应用
  
 ## 三、快速上手
 如何开始使用 UXR Phone SDK:

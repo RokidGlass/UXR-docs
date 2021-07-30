@@ -3,7 +3,8 @@
 ## 一、头动跟踪与双目渲染API
  此处可参考 [**Google Cardboard XR Unity API 参考**](https://developers.google.com/cardboard/reference/unity) 
 
-## 二、TouchPointer 控制射线整体（显示隐藏，渲染队列，锚中状态锚点贴图改变）
+## 二、Touch Screen
+### TouchPointer 控制射线整体（显示隐藏，渲染队列，锚中状态锚点贴图改变）
  * 类:
 
     TouchPointer
@@ -18,7 +19,7 @@
     |public void SetFocus(bool focus)           |设置锚点贴图       |
 	
 	
-## 三、TouchRay 手势 控制射线锚点移动 + 手势检测
+### TouchRay 手势 控制射线锚点移动 + 手势检测
 * 类:
 
     TouchRay
@@ -33,7 +34,7 @@
     |public void DrawRay()     |绘制射线，改变射线起始位置 |
 	
  
-## 四、动态权限申请
+## 三、动态权限申请
 
 * 类
 
@@ -43,7 +44,7 @@
 
   * public static void requestPermission(string[] permissions, string callbackObj, string callbackMethod) 请求指定权限，通过指定的物体callbackObj和方法callbackMethod返回，callbackMethod接收string类型，成功返回"true"，失败返回"false".
 
-## 五、USB设备管理
+## 四、USB设备管理
 
 * 类
 
@@ -57,7 +58,7 @@
      |public static void release()      |释放USB设备|
    
 
-## 六、语音识别
+## 五、语音识别
 Rokid 离线语音指令，可通过其添加、删除特定的语音指令。  
 
    目前支持中文、英文语音指令；  
@@ -76,7 +77,7 @@ Rokid 离线语音指令，可通过其添加、删除特定的语音指令。
  public void RemoveInstruct(int languageEnum,string name) |删除一条语音指令  参数: languageEnum: 0 - 中文, 1 - 英文 | RemoveInstruct(1,"next")
  public void ClearUserInstruct()                          |删除app内设置的所有指令                               |
    
-**2、单条指令**
+**2、添加一个指令**
 
 变量                                                       |定义                                              |示例
 ----------------------------------------------------------|--------------------------------------------------|---
@@ -85,7 +86,7 @@ public void AddInstrucEntityZH(string name, string pinyin, bool showTips, bool i
 public void AddInstrucEntity(int languageEnum,string name, string gameobj,string unitycallbackfunc,string tmp) |增加一条语音指令 参数: languageEnum: 0 - 中文, 1 - 英文 |AddInstrucEntity(1,"next", "VoiceRecognizer","unitydoNext","xyg")
 public void AddInstrucEntity(int languageEnum, string name, bool showTips, bool ignoreHelp, bool ignoreToast, string gameobj, string unitycallbackfunc, string tmp)|增加一条语音指令  参数:  languageEnum: 0 - 中文, 1 - 英文 |AddInstrucEntity(1,"next",true,true,true, "VoiceRecognizer","unitydoNext","xyg")
 
-**3、一组指令**
+**3、添加一组指令**
 
 变量                                                       |定义                                              |示例
 ----------------------------------------------------------|--------------------------------------------------|---

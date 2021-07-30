@@ -26,7 +26,7 @@ existing apps with XR capabilities.
     *  Rokid glass(supports Rokid Air glass)
   * Software
     *  Unity3D (2019.3.15f1 ~ 2020.1), JDK, Android SDK and NDK compatiable with Unity3D
-    *  Rokid Air App v1.0.6 , used to show and start UXR apps on the Android Phone
+    *  Rokid Air App v1.0.7 , used to show and start UXR apps on the Android Phone
 
 # Get started
 
