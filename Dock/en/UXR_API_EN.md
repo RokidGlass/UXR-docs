@@ -54,7 +54,7 @@ Delete instructions
   Delete all instructions set in the app
 
 
-Single instruction
+Add single instruction
 
   * public void AddInstrucEntityZH(string name, string pinyin, string gameobj,string unitycallbackfunc,string tmp)  
   Add a Chinese voice command   
@@ -78,7 +78,7 @@ Single instruction
   eg, AddInstrucEntity(1,"next",true,true,true, "VoiceRecognizer","unitydoNext","xyg")
 
 
-A set of instructions
+Add a set of instructions
 
   * public void AddInstrucListZH(string prefix, string subfix, string helpContent, int startNo, int endNo, string gameobj, string InstructListCallback)  
   Add a set of Chinese voice commands  
