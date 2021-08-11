@@ -51,19 +51,46 @@ Internet Access 选择 Require.
 * 3.4 **Publishing Settings**  
 打开 Project Settings > Player > Publishing Settings.
 
+Build 部分选择 Custom Base Gradle Template.  
+在 Assets/Plugins/Android/baseProjectTemplate.gradle的repositories 部分增加如下内容(文件中有两处需要添加，添加到已有的jcenter()下面):
+```CS
+  maven { url 'https://maven.rokid.com/repository/maven-public/' }
+```
+
 Build 部分选择 Custom Main Gradle Template.  
 在 Assets/Plugins/Android/mainTemplate.gradle的dependencies 部分增加如下内容:
-
+```CS
   implementation 'com.android.support:appcompat-v7:28.0.0'  
   implementation 'com.android.support:support-v4:28.0.0'  
   implementation 'com.google.android.gms:play-services-vision:15.0.2'  
   implementation 'com.google.protobuf:protobuf-javalite:3.8.0'  
+  implementation 'com.rokid.alliance.usbcamera2:usbcamera:2.0.0'
+  implementation 'com.rokid.ai.glass:instructsdk:1.6.1'
+```
 
-
-**如果Target API Level 设为 API Level 29 或 Automatic (highest installed)**，还需如下设置：
 
 Build部分选择 'Custom Main Manifest'.  
- Assets/Plugins/Android/AndroidManifest.xml的 application 标签下增加如下内容:
+在Assets/Plugins/Android/AndroidManifest.xml的 activity 标签行，修改android:name为com.rokid.uxrmobile.UXRMobileUPActivity，如下:  
+```CS
+    <activity android:name="com.rokid.uxrmobile.UXRMobileUPActivity"
+              android:theme="@style/UnityThemeSelector">
+```
+
+然后在AndroidManifest.xml中声明App所需权限，例如
+```CS
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true"/>
+    <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="true"/>
+    <uses-feature android:name="android.hardware.usb.host"/>
+    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+```
+
+**如果Target API Level 设为 API Level 29 或 Automatic (highest installed)**，还需如下设置：  
+ AndroidManifest.xml的 application 标签下增加如下内容:
 
   `<application android:requestLegacyExternalStorage="true" ... >`  
     ...  
