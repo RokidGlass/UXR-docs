@@ -13,6 +13,6 @@ They are not compatible with each other, please be aware of it, and choose the r
 * [UXR Phone SDK](Phone)
 
 
-UPDATE: 
-2021.8.25
-Later release of UXR SDK will be moved to new website(Chinese: https://rokid.yuque.com/ouziyq/qwkgc4, English: https://rokid.yuque.com/ouziyq/tvgpgk), and this project will be archived.
+UPDATE:   
+2021.8.25  
+Later release of UXR SDK will be moved to new website(Chinese: https://rokid.yuque.com/books/share/7b325232-3dae-4ed2-8821-93f915d1ef95, English: https://ar.rokid.com/), and this project will be archived.
